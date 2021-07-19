@@ -18,7 +18,7 @@ export const DashboardRoutes = () => {
                     ></Route>
                     <Route
                         exact
-                        path="/heros/:heroId"
+                        path="/hero/:heroId"
                         component={HeroScreen}
                     ></Route>
                     <Route
