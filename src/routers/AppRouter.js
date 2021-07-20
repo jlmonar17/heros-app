@@ -1,17 +1,32 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useContext } from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { AuthContext } from "../auth/AuthContext";
 import { LoginScreen } from "../components/login/LoginScreen";
 import { DashboardRoutes } from "./DashboardRoutes";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/login" component={LoginScreen}></Route>
+                    <PublicRoute
+                        exact
+                        path="/login"
+                        isAuthenticated={user.logged}
+                        component={LoginScreen}
+                    />
 
                     {/* Si es cualquier otra ruta que empiece con /, entonces se renderiza
                        el DashboardRoutes (el cual tiene el Navbar)*/}
-                    <Route path="/" component={DashboardRoutes}></Route>
+                    <PrivateRoute
+                        path="/"
+                        component={DashboardRoutes}
+                        isAuthenticated={user.logged}
+                    />
                 </Switch>
             </div>
         </Router>
