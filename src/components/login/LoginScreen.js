@@ -1,9 +1,22 @@
+import { useContext } from "react";
+import { AuthContext } from "../../auth/AuthContext";
+import { types } from "../../types/types";
+
 export const LoginScreen = ({ history }) => {
+    const { dispatch } = useContext(AuthContext);
+
     const handleLogin = () => {
-        // Redirecciona pero no pierde la historia de las rutas
+        // Redirects, but it doesn't lose routes history
         // history.push("/");
 
-        // Redirecciona y reemplaza en la historia que no visitó /login
+        dispatch({
+            type: types.login,
+            payload: {
+                name: "José",
+            },
+        });
+
+        // Redirects and replace in history that /login was not visited
         history.replace("/");
     };
 
