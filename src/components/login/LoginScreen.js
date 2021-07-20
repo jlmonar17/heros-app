@@ -9,6 +9,8 @@ export const LoginScreen = ({ history }) => {
         // Redirects, but it doesn't lose routes history
         // history.push("/");
 
+        const path = localStorage.getItem("lastPath") || "/";
+
         dispatch({
             type: types.login,
             payload: {
@@ -17,7 +19,7 @@ export const LoginScreen = ({ history }) => {
         });
 
         // Redirects and replace in history that /login was not visited
-        history.replace("/");
+        history.replace(path);
     };
 
     return (

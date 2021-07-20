@@ -6,6 +6,8 @@ export const PrivateRoute = ({
     isAuthenticated,
     ...rest
 }) => {
+    localStorage.setItem("lastPath", rest.location.pathname);
+
     return (
         <>
             <Route
