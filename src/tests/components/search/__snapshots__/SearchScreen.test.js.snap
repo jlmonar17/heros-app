@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for <SearchScreen /> Should render correctly with values by default 1`] = `
+Array [
+  <h1>
+    Search Screen
+  </h1>,
+  <hr />,
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <h5>
+        Search Form
+      </h5>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="search"
+          onChange={[Function]}
+          placeholder="Your search"
+          type="text"
+          value=""
+        />
+        <button
+          className="btn w-100 btn-outline-primary mt-3"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7"
+    >
+      <h4>
+        Results
+      </h4>
+      <hr />
+      <div
+        className="alert alert-info"
+      >
+        Search a hero...
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Tests for <SearchScreen /> Should show Batman character and input with value of queryString 1`] = `
+Array [
+  <h1>
+    Search Screen
+  </h1>,
+  <hr />,
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <h5>
+        Search Form
+      </h5>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="search"
+          onChange={[Function]}
+          placeholder="Your search"
+          type="text"
+          value="batman"
+        />
+        <button
+          className="btn w-100 btn-outline-primary mt-3"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7"
+    >
+      <h4>
+        Results
+      </h4>
+      <hr />
+      <div
+        className="col"
+      >
+        <div
+          className="card h-100"
+          style={
+            Object {
+              "maxWidth": 540,
+            }
+          }
+        >
+          <div
+            className="row no-gutters"
+          >
+            <div
+              className="col-md-4"
+            >
+              <img
+                alt="Batman"
+                className="card-img"
+                src="./assets/heroes/dc-batman.jpg"
+              />
+            </div>
+            <div
+              className="col-md-8"
+            >
+              <h5
+                className="card-title"
+              >
+                Batman
+              </h5>
+              <p
+                className="card-text"
+              >
+                Bruce Wayne
+              </p>
+              <p
+                className="card-text"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Detective Comics #27
+                </small>
+              </p>
+              <a
+                href="/hero/dc-batman"
+                onClick={[Function]}
+              >
+                More...
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Tests for <SearchScreen /> Should show error if hero doesn't exist 1`] = `
+Array [
+  <h1>
+    Search Screen
+  </h1>,
+  <hr />,
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <h5>
+        Search Form
+      </h5>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="search"
+          onChange={[Function]}
+          placeholder="Your search"
+          type="text"
+          value="batmanaaaa"
+        />
+        <button
+          className="btn w-100 btn-outline-primary mt-3"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7"
+    >
+      <h4>
+        Results
+      </h4>
+      <hr />
+      <div
+        className="alert alert-danger"
+      >
+        No heros found with 
+        batmanaaaa
+      </div>
+    </div>
+  </div>,
+]
+`;
